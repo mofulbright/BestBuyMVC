@@ -1,0 +1,24 @@
+﻿@using BestBuyMVC.bestbuy
+@model IEnumerable<Employee>
+
+<h2>Employees</h2>
+
+
+<table class="table">
+    <tr>
+        <th>Employee Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Title</th>
+    </tr>
+
+    @foreach (var employee in Model)
+    {
+        <tr>
+            <td><a href="/Employee/ViewEmployee/@employee.EmployeeId">@employee.EmployeeId</a></td>
+            <td>@employee.FirstName</td>
+            <td>@employee.LastName</td>
+            <td>@employee.Title</td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,31 @@
+﻿@using BestBuyMVC.bestbuy
+@model IEnumerable<Sale>
+
+<h2>Sales</h2>
+
+<div style="display: block">
+    <p>Enter a new sale</p>
+</div>
+
+<table class="table">
+    <tr>
+        <th>Sale Id</th>
+        <th>Product Id</th>
+        <th>Quantity</th>
+        <th>Price per unit</th>
+        <th>Date</th>
+        <th>Employee Id</th>
+    </tr>
+
+    @foreach (var sale in Model)
+    {
+        <tr>
+            <td>@sale.SalesId</td>
+            <td><a href=/Product/ViewProduct/@sale.ProductId>@sale.ProductId</a></td>
+            <td>@sale.Quantity</td>
+            <td>@sale.PricePerUnit</td>
+            <td>@sale.Date</td>
+            <td>@sale.EmployeeId</td>
+        </tr>
+    }
+</table>
