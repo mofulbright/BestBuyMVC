@@ -37,6 +37,19 @@
     </tr>
 </table>
 
-<div style="display: block">
+@*<div style="display: block">
     <a href="/Sale/SalesByEmployee/@Model.EmployeeId">View Employees Sales</a>
+</div>*@
+@*<form>
+    @Html.ActionLink("Sales for Employee", "SalesByEmployee", "Sale")
+</form>*@
+<div style="display: block">
+
+    @using (Html.BeginForm("SalesByEmployee", "Sale", "Post"))
+    {
+        <input type="hidden" asp-for="EmployeeId" value="@Model.EmployeeId" />
+        <input type="hidden" asp-for="FirstName" value="@Model.FirstName" />
+        <input type="hidden" asp-for="LastName" value="@Model.LastName" />
+        <input type="submit" value="View Employee's Sales" />
+    }
 </div>

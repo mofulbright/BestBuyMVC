@@ -1,4 +1,5 @@
 ﻿using BestBuyMVC.bestbuy;
+using BestBuyMVC.ViewModels;
 
 namespace BestBuyMVC.Repositories
 {
@@ -6,7 +7,7 @@ namespace BestBuyMVC.Repositories
     {
         public IEnumerable<Sale> GetAllSales();
         public IEnumerable<Sale> GetAllSalesForProduct(int id);
-        public IEnumerable<Sale> GetAllSalesForEmployee(int id);
+        public EmployeeSalesModel GetAllSalesForEmployee(Employee employee);
         public Sale GetSale();
         //public void AddSale();
 

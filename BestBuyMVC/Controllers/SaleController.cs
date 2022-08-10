@@ -1,4 +1,5 @@
-﻿using BestBuyMVC.Repositories;
+﻿using BestBuyMVC.bestbuy;
+using BestBuyMVC.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BestBuyMVC.Controllers
@@ -22,9 +23,9 @@ namespace BestBuyMVC.Controllers
             return View(sales);
         }
         
-        public IActionResult SalesByEmployee(int id)
+        public IActionResult SalesByEmployee(Employee employee)
         {
-            var sales = repo.GetAllSalesForEmployee(id);
+            var sales = repo.GetAllSalesForEmployee(employee);
             return View(sales);
         }
     }

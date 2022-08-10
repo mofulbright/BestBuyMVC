@@ -1,7 +1,7 @@
-﻿@using BestBuyMVC.bestbuy
-@model IEnumerable<Sale>
+﻿@using BestBuyMVC.ViewModels
+@model EmployeeSalesModel
 
-<h2>Sales for Employee </h2>
+<h2>Sales for @Model.Name </h2>
 
 
 <table class="table">
@@ -14,7 +14,7 @@
         <th>Employee Id</th>
     </tr>
 
-    @foreach (var sale in Model)
+    @foreach (var sale in Model.sales)
     {
         <tr>
             <td>@sale.SalesId</td>

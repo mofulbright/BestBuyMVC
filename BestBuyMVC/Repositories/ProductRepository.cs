@@ -54,5 +54,9 @@ namespace BestBuyMVC.Repositories
             _conn.Execute("Update products SET Name = @name, Price = @price WHERE ProductId = @id",
                 new { name = product.Name, price = product.Price, id = product.ProductId });
         }
+        public byte[] GetPicture(int id)
+        {
+            return _conn.QuerySingle<byte[]>("SELECT testpictures FROM products WHERE productId = @id", new { id });
+        }
     }
 }

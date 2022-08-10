@@ -1,4 +1,5 @@
 ﻿using BestBuyMVC.bestbuy;
+using BestBuyMVC.ViewModels;
 using Dapper;
 using System.Data;
 
@@ -22,9 +23,13 @@ namespace BestBuyMVC.Repositories
             return _conn.Query<Sale>("SELECT * FROM sales");
         }
 
-        public IEnumerable<Sale> GetAllSalesForEmployee(int id)
+        public EmployeeSalesModel GetAllSalesForEmployee(Employee employee)
         {
-            return _conn.Query<Sale>("SELECT * FROM sales WHERE employeeId = @id", new { id });
+            return new EmployeeSalesModel()
+            {
+                Name = employee.FirstName + " " + employee.LastName,
+                sales = _conn.Query<Sale>("SELECT * FROM sales WHERE employeeId = @id", new { id = employee.EmployeeId })
+            };
         }
 
         public IEnumerable<Sale> GetAllSalesForProduct(int id)

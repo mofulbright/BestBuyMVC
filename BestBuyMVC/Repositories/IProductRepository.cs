@@ -1,4 +1,5 @@
 ﻿using BestBuyMVC.bestbuy;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BestBuyMVC.Repositories
 {
@@ -12,5 +13,6 @@ namespace BestBuyMVC.Repositories
         public IEnumerable<Category> GetCategories();
         public Product AssignCategory();
         public void DeleteProduct(Product product);
+        public byte[] GetPicture(int id);
     }
 }
