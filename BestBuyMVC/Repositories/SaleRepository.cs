@@ -13,10 +13,15 @@ namespace BestBuyMVC.Repositories
             _conn = conn;
         }
 
-        //public void AddSale()
-        //{
-            
-        //}
+        public IEnumerable<Product> GetProductsForNewSale()
+        {
+            return _conn.Query<Product>("SELECT * FROM products;");
+        }
+        public void AddSale()
+        {
+
+        }
+
 
         public IEnumerable<Sale> GetAllSales()
         {
@@ -37,9 +42,14 @@ namespace BestBuyMVC.Repositories
             return _conn.Query<Sale>("SELECT * FROM sales WHERE productId = @id", new { id });
         }
 
-        public Sale GetSale()
+        public Sale GetSale(int id)
         {
-            throw new NotImplementedException();
+            return _conn.QuerySingle<Sale>("SELECT * FROM sales WHERE salesId = @id", new { id });
+        }
+
+        public IEnumerable<Employee> GetEmployeesForNewSale()
+        {
+            return _conn.Query<Employee>("SELECT * FROM employees;");
         }
     }
 }

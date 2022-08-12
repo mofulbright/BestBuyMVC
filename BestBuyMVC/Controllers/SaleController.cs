@@ -28,5 +28,15 @@ namespace BestBuyMVC.Controllers
             var sales = repo.GetAllSalesForEmployee(employee);
             return View(sales);
         }
+        
+        public IActionResult SaleById(int id)
+        {
+            return View(repo.GetSale(id));
+        }
+
+        public IActionResult AddSale()
+        {
+
+        }
     }
 }

@@ -1,0 +1,21 @@
+﻿@model Sale
+<h3>Sale Information</h3>
+
+<table class = "table">
+    <tr>
+        <th>Product Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category Id</th>
+        <th>On Sale</th>
+        <th>StockLevel</th>
+    </tr>
+    <tr>
+        <td>@Model.SalesId</td>
+        <td>@Model.ProductId</td>
+        <td>@Model.Quantity</td>
+        <td>@Model.PricePerUnit</td>
+        <td>@Model.Date</td>
+        <td>@Model.EmployeeId</td>
+    </tr>
+</table>

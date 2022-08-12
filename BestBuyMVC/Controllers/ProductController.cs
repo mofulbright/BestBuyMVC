@@ -61,10 +61,5 @@ namespace BestBuyMVC.Controllers
             repo.DeleteProduct(product);
             return RedirectToAction("Index");
         }
-        public FileContentResult SomePicture(int id)
-        {
-            byte[] bytes = repo.GetPicture(id);
-            return File(bytes, "image/png");
-        }
     }
 }

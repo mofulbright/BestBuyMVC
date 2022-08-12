@@ -20,7 +20,6 @@ builder.Services.AddTransient<IProductRepository, ProductRepository>();
 builder.Services.AddTransient<ISaleRepository, SaleRepository>();
 builder.Services.AddTransient<IEmployeeRepository, EmployeeRepository>();
 
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

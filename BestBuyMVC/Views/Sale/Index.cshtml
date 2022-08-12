@@ -20,7 +20,7 @@
     @foreach (var sale in Model)
     {
         <tr>
-            <td>@sale.SalesId</td>
+            <td><a href=/Sale/SaleById/@sale.SalesId>@sale.SalesId</td>
             <td><a href=/Product/ViewProduct/@sale.ProductId>@sale.ProductId</a></td>
             <td>@sale.Quantity</td>
             <td>@sale.PricePerUnit</td>
