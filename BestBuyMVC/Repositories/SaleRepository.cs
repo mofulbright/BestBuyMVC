@@ -17,6 +17,16 @@ namespace BestBuyMVC.Repositories
         {
             return _conn.Query<Product>("SELECT * FROM products;");
         }
+
+        public Sale AssignEmployeesAndProducts()
+        {          
+            Sale newSale = new Sale()
+            {
+                Employees = GetEmployeesForNewSale(),
+                Products = GetProductsForNewSale()
+            };
+            return newSale;
+        }
         public void AddSale()
         {
 
@@ -39,7 +49,10 @@ namespace BestBuyMVC.Repositories
 
         public IEnumerable<Sale> GetAllSalesForProduct(int id)
         {
-            return _conn.Query<Sale>("SELECT * FROM sales WHERE productId = @id", new { id });
+            var sales = _conn.Query<Sale>("SELECT * FROM sales WHERE productId = @id", new { id }).ToList();
+            sales[0].Product = _conn.QuerySingle<Product>("SELECT * FROM products WHERE productId = @id", new { id });
+            return sales;
+            
         }
 
         public Sale GetSale(int id)

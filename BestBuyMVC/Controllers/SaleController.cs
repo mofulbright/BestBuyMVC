@@ -36,7 +36,7 @@ namespace BestBuyMVC.Controllers
 
         public IActionResult AddSale()
         {
-
+            return View(repo.AssignEmployeesAndProducts());
         }
     }
 }

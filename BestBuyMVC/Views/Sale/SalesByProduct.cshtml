@@ -1,9 +1,12 @@
 ﻿@using BestBuyMVC.bestbuy
 @model IEnumerable<Sale>
 
-<h2>Sales</h2>
+@*<h2>Sales</h2>*@
 
-
+@foreach (var sale in Model.Take(1))
+{
+    <h2>Sales for @sale.Product.Name</h2>
+}
 <table class="table">
     <tr>
         <th>Sale Id</th>

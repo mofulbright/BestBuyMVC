@@ -1,7 +1,8 @@
 ﻿
 @model Product
 <h3>@Model.Name Information</h3>
-
+<h2>@Model.Date</h2>
+@*<img src= "@Url.Content(Model.pic)" />*@
 <table class = "table">
     <tr>
         <th>Product Id</th>
@@ -26,7 +27,7 @@
 </div>
 <div style="display: block">
     <a href="/Sale/SalesByProduct/@Model.ProductId">View Product Sales</a>
-</div>
+</div>s
 <a asp-controller="Sale" asp-action="SalesByProduct" asp-route-id="@Model.ProductId"> Product Sales</a>
 
 <div style="display: block">

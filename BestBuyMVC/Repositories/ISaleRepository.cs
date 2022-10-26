@@ -12,6 +12,7 @@ namespace BestBuyMVC.Repositories
         public void AddSale();
         public IEnumerable<Product> GetProductsForNewSale();
         public IEnumerable<Employee> GetEmployeesForNewSale();
+        public Sale AssignEmployeesAndProducts();
 
         //public void UpdateSale();
         //public void DeleteSale();

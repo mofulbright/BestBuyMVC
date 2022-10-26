@@ -22,7 +22,8 @@ namespace BestBuyMVC.bestbuy
         public virtual Category Category { get; set; } = null!;
         public virtual ICollection<Review> Reviews { get; set; }
         public virtual ICollection<Sale> Sales { get; set; }
-        
+        public string Date { get; set; }
         public byte[] Picture { get; set; }
+        public string pic { get; set; } = "~/Images/screen.png";
     }
 }

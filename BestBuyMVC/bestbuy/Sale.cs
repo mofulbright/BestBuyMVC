@@ -10,6 +10,8 @@ namespace BestBuyMVC.bestbuy
         public int Quantity { get; set; }
         public decimal PricePerUnit { get; set; }
         public IEnumerable<Sale> Sales { get; set; }
+        public IEnumerable<Product> Products { get; set; }
+        public IEnumerable<Employee> Employees { get; set; }
         public DateTime Date { get; set; }
         public int? EmployeeId { get; set; }
 
